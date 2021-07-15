@@ -1,3 +1,21 @@
+/* https://www.canva.com/learn/website-color-schemes/ */
+body {
+  /* #17: modern and clean */
+
+  --lightgrey:  #dde1dd;
+  --tangerine:  #e37222;
+  --teal:  #07889b;
+  --powder:  #66b9bf;
+  --tan:  #eeaa78;
+ 
+
+  --grain:  #d7cec7;
+  --blackboard:  #565656;
+  --maroon:  #76323F;
+  --tan:  #c09f80;
+
+  /* #5 warm tones */
+}
 html, body {
   height: 100%;
   padding: 0px;
@@ -11,6 +29,7 @@ html, body {
   display: flex;
   font-family: Arial;
   margin: 0px auto;
+  background-color:  var(--lightgrey);
 }
 .ui-content {
   margin-top: 20px;
@@ -20,7 +39,7 @@ h2 {
   margin: 0px;
   font-size: 14px;
   text-align: center;
-  background-color: navy;
+  background-color: var(--teal);
   color: white;
   width: 100%;
 }
@@ -42,16 +61,7 @@ h2 {
   transition: 0.4s ease;
  
 }
-/* placeholder screen colors */
-#page_one_path {
-  background-color: lightblue;
-}
-#page_two_path {
-  background-color: lightyellow;
-}
-#page_three_path {
-  background-color: lightpink;
-}
+
 ul.nav {
   list-style-type: none;
   display: flex;
@@ -87,3 +97,52 @@ ul.nav li a:hover {
   background-color: dodgerblue;
   transition: 0.2s ease;
 }
+ul.home-menu {
+  list-style-type:  none;
+  max-width:  248px;
+  margin:  20px auto;
+  margin-left:  0px;
+  padding-left:  0px;
+  display:  flex;
+  flex-wrap:  wrap;
+
+}
+ul.home-menu li {
+
+
+}
+ul.home-menu li a {
+  text-decoration:  none;
+  display:  block;
+  width:  120px;
+  height:  120px;
+  color:  white;
+  display:  flex;
+  justify-content:  center;
+  align-items:  center;
+  background-color:  var(--tangerine);
+  margin:  2px;
+}
+ul.home-menu li a.order {
+    background-color:  var(--tangerine);
+}
+ul.home-menu li a.contact {
+    background-color:  var(--powder);
+}
+ul.home-menu li a.about {
+    background-color:  var(--teal);
+}
+ul.home-menu li a.locations {
+    background-color:  var(--tan);
+}
+/* placeholder screen colors */
+/*
+#app_home_path {
+  background-color: lightblue;
+}
+#app_order_path {
+  background-color: lightyellow;
+}
+#app_contact_path {
+  background-color: lightpink;
+}*/
