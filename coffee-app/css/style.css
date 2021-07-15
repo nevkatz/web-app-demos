@@ -1,0 +1,89 @@
+html, body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#app {
+  width: 100%;
+  min-height: 100%;
+  border: 1px solid #000;
+  position: relative;
+  display: flex;
+  font-family: Arial;
+  margin: 0px auto;
+}
+.ui-content {
+  margin-top: 20px;
+}
+h2 {
+  padding: 4px 0px;
+  margin: 0px;
+  font-size: 14px;
+  text-align: center;
+  background-color: navy;
+  color: white;
+  width: 100%;
+}
+#app .page {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  flex-direction: column;
+  transition: 0.4s ease;
+}
+#app .page.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.4s ease;
+ 
+}
+/* placeholder screen colors */
+#page_one_path {
+  background-color: lightblue;
+}
+#page_two_path {
+  background-color: lightyellow;
+}
+#page_three_path {
+  background-color: lightpink;
+}
+ul.nav {
+  list-style-type: none;
+  display: flex;
+  margin-left: 0px;
+  padding-left: 0px;
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  width: 100%;
+  margin-bottom: 0px;
+  justify-content: space-around;
+}
+ul.nav li {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+ul.nav li a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #ffe;
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+  padding: 5px 20px;
+  width: calc(100% - 40px);
+  border-radius: 20px;
+  transition: 0.2s ease;
+}
+ul.nav li a:hover {
+  color: #ffe;
+  background-color: dodgerblue;
+  transition: 0.2s ease;
+}
