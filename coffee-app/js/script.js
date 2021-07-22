@@ -7,11 +7,10 @@ utils.init('app');
 function app_menu() {
     // start by declaring an items object.
      var items = {};
-  
      // each key will be ID of the "screen."
      items.app_home_path = {
         active: true,
-        title: 'Nev\'s Coffee & Juice',
+        title: 'Nev\'s Coffee',
         page_callback: 'app_home',
      };
      items.app_order_path = {
@@ -19,15 +18,15 @@ function app_menu() {
         page_callback: 'app_order'
      };
      items.app_contact_path = {
-        title: 'About',
+        title: 'Contact',
         page_callback: 'app_contact'
      };
-     items.app_locations_path = {
-        title: 'Locations',
-        page_callback: 'app_locations'
+     items.app_gift_path = {
+        title: 'Gift',
+        page_callback: 'app_gift'
      };
-        items.app_about_path = {
-        title: 'Locations',
+     items.app_about_path = {
+        title: 'About',
         page_callback: 'app_about'
      };
   
@@ -43,7 +42,11 @@ function app_home() {
   
   // object with a markup property.
   content.msg = {
-    markup: 'Welcome to Nev\'s Coffee & Juice!'
+    markup: '<h3>Welcome!</h3>'
+  };
+
+  content.img = {
+    markup: '<img src="images/coffee.svg"/>'
   };
   
   // object with a links property.
@@ -60,9 +63,9 @@ function app_home() {
       className:'about',
     },
     {
-      text:'Locations',
-      href:'#app_locations_path',
-      className:'locations'
+      text:'Gift',
+      href:'#app_gift_path',
+      className:'gift'
     },
     {
       text:'Contact',
@@ -80,20 +83,36 @@ function app_order() {
   let content = {};
   
   content.msg = {
-    markup: 'This is page 2.'
+    markup: '<p>Order here.</p>'
   };
+
+  content.img = {
+    markup: '<img src="images/coffee-cup.svg" class="large-icon"/>'
+  };
+
   content.nav = {
     className:'nav',
     links:[{
-      text:'page 1',
+      text:'Home',
       href:'#app_home_path'
     },
     {
-      text:'page 2',
+      text:'About',
+      href:'#app_about_path'
+    },
+    {
+      text:'Gift',
+      href:'#app_gift_path'
+    },
+    {
+      text:'Contact',
       href:'#app_contact_path'
     }]
   };
   return content;
+}
+function sendMessage() {
+  alert('message sent!');
 }
 /*
  *  the page 3 callback.
@@ -101,38 +120,86 @@ function app_order() {
 function app_contact() {
   let content = {};
   
-  content.msg = {
-    markup: 'Contact Page.'
+  content.instrux = {
+    markup: '<p>Enter your message here and press <strong>send</strong>.<p>.'
   };
-  content.nav = {
-    className:'nav',
-    links:[{
-      text:'page 1',
+  content.fields = {
+    text_inputs:[{
+      label:'Your Name',
+      required:true,
+      id:'sender-name',
+    },{
+      label:'Your email address',
+      required:true,
+      id:'sender-email',
+    },
+    {
+      label:'Subject',
+      required:true,
+      id:'sender-subject'
+    }]
+  }
+
+  content.message = {
+    markup:'<label>Message</label><textarea id="msg"></textarea>'
+  };
+  content.submit = {
+    className:'align-left',
+    button: {
+      id:'my-button',
+      className:'submit',
+      textContent:'Send',
+      attrs:{
+        onclick:'sendMessage()'
+      }
+    }
+  }
+
+ content.nav ={
+  className:'nav',
+  links: [{
+      text:'Home',
       href:'#app_home_path'
     },
     {
-      text:'page 2',
+      text:'Order',
       href:'#app_order_path'
+    },
+    {
+      text:'About',
+      href:'#app_about_path'
+    },
+    {
+      text:'Gift',
+      href:'#app_gift_path'
     }]
   };
   return content;
 }
 
-function app_locations() {
+function app_gift() {
   let content = {};
   
   content.msg = {
-    markup: 'Locations Page.'
+    markup: 'Gift Page.'
   };
   content.nav = {
     className:'nav',
     links:[{
-      text:'page 1',
+      text:'Home',
       href:'#app_home_path'
     },
     {
-      text:'page 2',
+      text:'Order',
       href:'#app_order_path'
+    },
+    {
+      text:'About',
+      href:'#app_about_path'
+    },
+    {
+      text:'Contact',
+      href:'#app_contact_path'
     }]
   };
   return content;
@@ -142,16 +209,24 @@ function app_about() {
   let content = {};
   
   content.msg = {
-    markup: 'Locations Page.'
+    markup: 'About Us.'
   };
   content.nav = {
     className:'nav',
     links:[{
-      text:'page 1',
+      text:'Home',
       href:'#app_home_path'
     },
     {
-      text:'page 2',
+      text:'Gift',
+      href:'#app_gift_path'
+    },
+    {
+      text:'Contact',
+      href:'#app_contact_path'
+    },
+    {
+      text:'Order',
       href:'#app_order_path'
     }]
   };
